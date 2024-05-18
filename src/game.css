@@ -5,6 +5,11 @@ body {
   font-family: "Comic Sans MS";
 }
 
+.game-block {
+  opacity: 0.2;
+  background: rgb(182, 177, 177);
+}
+
 .game-body {
   width: 100vw;
   min-height: 100vh;
@@ -169,4 +174,57 @@ body {
   100% {
     background-color: transparent;
   }
+}
+
+.game-info img {
+  background-color: white;
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+
+.game-info img:hover {
+  transform: scale(1.25);
+  transition: 0.5s ease-in-out;
+}
+
+.game-rules {
+  position: absolute;
+  background-color: black;
+  border: 2px solid white;
+  display: flex;
+  width: 60vw;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.rule-body {
+  text-align: left;
+  list-style-type: circle;
+}
+
+.rule-header {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.close-rules {
+  position: absolute;
+  display: flex;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  top: 2rem;
+  right: 2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

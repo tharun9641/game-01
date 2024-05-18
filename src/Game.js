@@ -3,10 +3,12 @@ import "../src/game.css";
 import paper from "../src/images/Paper.png";
 import rock from "../src/images/Rock.png";
 import scissor from "../src/images/Scissor.png";
+import info from "../src/images/info.png";
 import { motion } from "framer-motion";
 const Game = () => {
   const options = ["rock", "paper", "scissor"];
   const [playerScore, setPlayerScore] = useState(0);
+  const [showRule, setShow] = useState(false);
   const [showComment, setComment] = useState("");
   const [getSelect, setSelect] = useState({ player: "", system: "" });
   const inputstring = ">>";
@@ -14,6 +16,10 @@ const Game = () => {
   const SelectItem = () => {
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
+  };
+
+  const toggleRule = () => {
+    setShow(!showRule);
   };
 
   const ChangeScore = () => {
@@ -68,8 +74,13 @@ const Game = () => {
 
   return (
     <div className="game-body">
-      <div>
-        <div className="game-title">Rock-Paper-Scissor</div>
+      <div className={showRule ? "game-block" : ""}>
+        <div className="game-title">
+          Rock-Paper-Scissor
+          <span className="game-info">
+            <img src={info} alt="info" onClick={toggleRule}></img>
+          </span>
+        </div>
         <div className="container">
           <motion.div
             className="card"
@@ -134,14 +145,34 @@ const Game = () => {
             </div>
           </div>
         </div>
-        {/* <div className={gamestate ? gamestate : "no-play"}>
-          {showComment ? showComment : "Let's go"}
-        </div>
-        <div className="score">
-          Score : {playerScore}
-          <input type="button" value="End game" onClick={Reset} />
-        </div> */}
       </div>
+      {showRule && (
+        <motion.div
+          className="game-rules"
+          initial={{ opacity: 0, rotateY: 270 }}
+          animate={{ opacity: 1, rotateY: 360 }}
+          transition={{ duration: 0.5 }}>
+          <div className="close-rules" onClick={toggleRule}>
+            X
+          </div>
+          <div>
+            <div className="rule-header">How to play?</div>
+            <div>
+              <div className="rule-body">
+                - Click on one of the card to get started.
+              </div>
+              <div className="rule-body">
+                - Score is displayed on the right.
+              </div>
+              <div className="rule-body">
+                - Your move and opponent's move is displayed on the screen
+              </div>
+              <div className="rule-body">- To start fresh, click on reset.</div>
+            </div>
+            <div className="rule-header">~~Happy gaming!~~</div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };
