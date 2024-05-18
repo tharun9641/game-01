@@ -1,0 +1,172 @@
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS";
+}
+
+.game-body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game-title {
+  font-size: 5rem;
+}
+
+.score {
+  font-size: 3rem;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 60vh;
+  gap: 2rem;
+}
+.card {
+  width: 15vw;
+  aspect-ratio: 1/1.5;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  flex-basis: 200px;
+}
+
+.inner-card {
+  display: block;
+  background: white;
+  border-radius: 10px;
+  color: black;
+  width: 75%;
+  height: 75%;
+  z-index: 2;
+}
+
+.inner-card-flip {
+  position: absolute;
+}
+
+.inner-card img {
+  padding: 25% 0;
+  width: 90%;
+  object-fit: contain;
+}
+
+.card:hover {
+  transform: scale(1.125);
+  transition: 0.125s linear;
+}
+
+.green,
+.red,
+.yellow,
+.no-play {
+  width: fit-content;
+  margin: auto;
+  font-size: 2rem;
+  border-radius: 10px;
+  transition: 0.5s ease-in;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+.green {
+  background-color: greenyellow;
+}
+
+.red {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.score input {
+  font-size: 1.25rem;
+  border-radius: 10px;
+  padding: 0.25rem;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.score input:hover {
+  transform: scale(1.1);
+  transition: 0.125s linear;
+}
+
+.inner-card-flip {
+  z-index: 99;
+}
+
+.console-view {
+  min-width: 30vw;
+  aspect-ratio: 1/0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  flex-wrap: wrap;
+}
+
+.console-continer {
+  border: 2px solid white;
+  width: inherit;
+  height: 95%;
+  border-radius: 10px;
+  flex-basis: 425px;
+}
+
+.console-head,
+.console-header {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  border-bottom: 1px solid white;
+  gap: 0.25rem;
+  align-items: center;
+  margin: 0 0.25rem;
+}
+
+.console-body {
+  margin: 0.125rem;
+  width: 98%;
+  height: 85%;
+  text-align: left;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+.reset-button {
+  position: relative;
+  padding: 0;
+  right: 0.5rem;
+}
+@keyframes blinker {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}

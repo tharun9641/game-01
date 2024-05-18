@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
